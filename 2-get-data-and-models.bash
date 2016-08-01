@@ -107,16 +107,17 @@ fi
 if [ ! -e "Shakespeare.poetry.txt.gz" ]; then
   mkdir Shakespeare
   cd Shakespeare/
-    # 20Mb
-    wget http://sydney.edu.au/engineering/it/~matty/Shakespeare/shakespeare.tar.gz
-    tar -xzf shakespeare.tar.gz 
-  cd ..
+   # 20Mb
+   wget http://www.cs.usyd.edu.au/~matty/Shakespeare/shakespeare.tar.gz
+   tar -xzf shakespeare.tar.gz 
+   cd ..
 
   # NB: There are other folders here, but these are the simplest example sets
   cat Shakespeare/comedies/* Shakespeare/histories/* Shakespeare/tragedies/* > Shakespeare.plays.txt
   cat Shakespeare/poetry/* > Shakespeare.poetry.txt
   
   gzip Shakespeare.plays.txt   # 5Mb of text 
+
   gzip Shakespeare.poetry.txt  # 700Kb of text
 
   rm -rf Shakespeare/
@@ -147,10 +148,10 @@ if [ ! -e "india.names.1990-5.txt.gz" ]; then
   rm -rf india-names/
 fi
 
-if [ ! -e "ALL_1-vocab.txt.gz" ]; then
+#if [ ! -e "ALL_1-vocab.txt.gz" ]; then
  # Retrieve ALL_1-vocab.txt from somewhere (1-billion-corpus)...
- gzip ALL_1-vocab.txt
-fi
+# gzip ALL_1-vocab.txt
+#fi
 
 if [ ! -e "en.wikipedia.2010.100K.txt" ]; then
   # Retrieve wikipedia dump
